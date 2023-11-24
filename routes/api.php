@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::controller(UserController::class)->group(function () {
+    Route::get('user', 'index');
     Route::post('users', 'store');
 });
 

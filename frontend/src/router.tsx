@@ -19,10 +19,10 @@ const routerConfig: RouteConfig[] = [
     children: [
       {
         path: '/',
-        element: <Navigate to="/dashboard" />,
+        element: <Navigate to="/home" />,
       },
       {
-        path: '/dashboard',
+        path: '/home',
         element: <Dashboard />,
       },
     ],

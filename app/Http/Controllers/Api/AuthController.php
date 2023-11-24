@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\JsonResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,7 @@ class AuthController extends Controller
         }
 
         /** @var User $user */
-        $user = Auth::user();
+        $user = new UserResource(Auth::user());
         $token = Auth::attempt($credentials);
 
         // return response(compact('user', 'token'))->cookie('token', $token, 60, null, null, false, true);

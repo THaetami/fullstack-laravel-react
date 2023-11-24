@@ -1,0 +1,12 @@
+.wrap-dashboard {
+    padding-top: 55px;
+    padding-bottom: 10px;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+@media (min-width: 768px) {
+    .wrap-dashboard {
+        padding-top: 70px;
+    }
+}
