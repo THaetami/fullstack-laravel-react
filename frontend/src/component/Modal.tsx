@@ -27,7 +27,7 @@ export default function Modal() {
   return (
     <> {
         openModal && (
-          <div id="myModal" className="modal animated fadeInDown">
+          <div id="myModal" className="modal-custom animated fadeInDown">
               <div className={`modal-content ${!openModal ? 'mt-detail' : 'mt-delete'}`}>
                   <div className={`modal-card ${!openModal ? 'detail-modal' : 'delete-modal'}`}>
                     <div className="modal-card-delete__body">

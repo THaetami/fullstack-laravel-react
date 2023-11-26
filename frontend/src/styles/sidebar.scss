@@ -1,5 +1,5 @@
 .active-link {
-    color: #3498db
+    color: #3498db;
 }
 
 html, body {
@@ -45,7 +45,7 @@ html, body {
 
     & ~ #nav-content {
         .nav-button {
-            span {
+            .label-nav {
                 opacity: 0;
                 transition: opacity .1s;
             }
@@ -228,7 +228,7 @@ label[for="nav-toggle"] {
     display: flex;
     align-items: center;
     direction: ltr;
-    cursor: pointer;
+    // cursor: pointer;
     z-index: 1;
     transition: color .2s;
 
@@ -240,16 +240,47 @@ label[for="nav-toggle"] {
         transition: min-width .2s;
     }
 
-    @for $i from 1 through 10 {
-        &:nth-of-type(#{$i}):hover {
-            color: var(--navbar-dark-primary);
+    // @for $i from 1 through 10 {
+    //     &:nth-of-type(#{$i}):hover {
+    //         color: var(--navbar-dark-primary);
 
-            & ~ #nav-content-highlight {
-                top: ($i - 1) * 54 + 16px;
-            }
-        }
-    }
+    //         & ~ #nav-content-highlight {
+    //             top: ($i - 1) * 54 + 16px;
+    //         }
+    //     }
+    // }
 }
+
+// .nav-button {
+//     position: relative;
+//     margin-left: 16px;
+//     height: 54px;
+//     display: flex;
+//     align-items: center;
+//     direction: ltr;
+//     cursor: pointer;
+//     z-index: 1;
+//     transition: color 0.2s;
+
+//     span {
+//       transition: opacity 1s;
+//     }
+
+//     .fas {
+//       transition: min-width 0.2s;
+//     }
+
+//     @for $i from 1 through 10 {
+//       &:nth-of-type(#{$i}):hover {
+//         color: var(--navbar-dark-secondary);
+
+//         & ~ #nav-content-highlight {
+//           top: ($i - 1) * 54 + 16px;
+//         }
+//       }
+//     }
+//   }
+
 
 #nav-bar .fas {
     min-width: 4rem;
@@ -360,6 +391,27 @@ label[for="nav-footer-toggle"] {
         &::-webkit-scrollbar {
             width: 6px;
             height: 6px;
+        }
+    }
+
+
+    .nav-button {
+        span {
+            transition: opacity 1s;
+        }
+
+        .fas {
+            transition: min-width .2s;
+        }
+
+        @for $i from 1 through 10 {
+            &:nth-of-type(#{$i}):hover {
+                color: var(--navbar-dark-primary);
+
+                & ~ #nav-content-highlight {
+                    top: ($i - 1) * 54 + 16px;
+                }
+            }
         }
     }
 }

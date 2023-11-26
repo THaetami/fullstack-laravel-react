@@ -30,7 +30,7 @@ body {
 
 :root {
     --background: #f6f6f6;
-    --navbar-width: 256px;
+    --navbar-width: 250px;
     --navbar-width-min: 60px;
     --navbar-dark-primary: #18283b;
     --navbar-dark-secondary: #2c3e50;
@@ -41,7 +41,7 @@ body {
 .notification {
     position: fixed;
     right: 1rem;
-    top: 1rem;
+    bottom: 1rem;
     z-index: 100;
     padding: 1rem 1.5rem;
     color: white;

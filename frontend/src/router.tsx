@@ -5,6 +5,7 @@ import Dashboard from './views/Dashboard';
 import NotFound from './views/NotFound';
 import DefaultLayout from './component/DefaultLayout';
 import GuestLayout from './component/GuestLayout';
+import Report from './views/Report';
 
 interface RouteConfig {
   path: string;
@@ -24,6 +25,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/home',
         element: <Dashboard />,
+      },
+      {
+        path: '/report',
+        element: <Report />,
       },
     ],
   },

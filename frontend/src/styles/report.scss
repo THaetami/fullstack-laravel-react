@@ -1,0 +1,25 @@
+.wrap-report {
+    padding-top: 55px;
+    padding-bottom: 10px;
+    overflow: auto;
+    // background-color: white;
+}
+
+.kontener {
+    width: calc(100%);
+}
+
+@media (min-width: 768px) {
+    .kontener {
+        width: 680px;
+    }
+}
+
+@media (min-width: 1125px) {
+    .wrap-report {
+        padding-top: 70px;
+    }
+    .kontener {
+        width: 900px;
+    }
+}
