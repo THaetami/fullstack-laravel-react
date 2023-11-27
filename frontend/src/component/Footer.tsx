@@ -1,8 +1,8 @@
 
 export default function Footer() {
   return (
-    <div className="h-[80px] border-t-4 w-full  flex justify-start items-center px-14" style={{ boxShadow: 'rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset' }}>
-      <p className="mt-4 text-blue-900">© 2023 Itungin- Online Accounting Software</p>
+    <div className="h-[55px] mt-3 w-full p-4 relative flex justify-center items-center rounded-md text-black" style={{ background: 'var(--navbar-light-secondary)', boxShadow: 'rgb(0, 0, 0) 0px -13px 14px -9px, rgb(0, 0, 0) 0px 16px 15px -9px' }}>
+      <div className=" py-1 text-md">© 2023 Itungin- Online Accounting Software</div>
     </div>
   )
 }

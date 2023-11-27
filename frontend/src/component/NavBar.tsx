@@ -53,12 +53,12 @@ export default function NavBar() {
             </div>
             <div className="dropdown-container">
               {openDropdown &&
-                <ul className="dropdown-list text-md">
-                  <li className="dropdown-list-item flex items-center space-x-2 py-2">
+                <ul className="dropdown-list text-md ">
+                  <li className="dropdown-list-item flex items-center space-x-2">
                     <FaRegUserCircle  />
                     <div>Profile</div>
                   </li>
-                  <li onClick={() => { setOpenModal(true); setOpenDropdown(false); }} className="dropdown-list-item flex items-center space-x-2 py-2">
+                  <li onClick={() => { setOpenModal(true); setOpenDropdown(false); }} className="dropdown-list-item flex items-center space-x-2">
                     <IoMdLogOut />
                     <div>Logout</div>
                   </li>

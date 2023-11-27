@@ -6,6 +6,7 @@
 
 .kontener {
     width: calc(100% - 22px);
+    min-height: 100vh;
 }
 
 @media (min-width: 768px) {
