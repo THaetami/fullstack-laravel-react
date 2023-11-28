@@ -19,17 +19,18 @@ export default function Report() {
   return (
     <div className="wrap-report h-screen overflow-auto items-center">
       <div className="kontener-report mx-auto mb-10">
-        <div role="tablist" className="tabs tabs-lg tabs-lifted overflow-auto bg-blue-300 rounded-lg pt-2 pb-10 px-2">
+        <div role="tablist" className="tabs tabs-lg tabs-lifted  overflow-auto rounded-lg pt-2 pb-10 px-2 text-black" style={{ background: 'transparent' }}>
           {categories.map((category, index) => (
             <React.Fragment key={index}>
-              <input
-                type="radio"
-                name="my_tabs_1"
-                role="tab"
-                className="tab bg-blue-300 border-none"
-                aria-label={category}
-                ref={index === 0 ? firstRadioRef : null }
-              />
+                <input
+                  type="radio"
+                  name="my_tabs_1"
+                  role="tab"
+                  className="tab border-black border-4"
+                  style={{ background: 'transparent', }}
+                  aria-label={category}
+                  ref={index === 0 ? firstRadioRef : null }
+                />
               <div role="tabpanel" className="tab-content py-2 px-1">
                 <div className="text-lg m-0 px-1">
                   { category } report:
@@ -44,7 +45,7 @@ export default function Report() {
                               <div>
                                 <div className='text-xl mb-2 font-semibold'>{item.title}</div>
                                 <div className='tex-md font-normal'>{item.desc}</div>
-                                <button className='mt-2 rounded-md border-white border-2 px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
+                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
                               </div>
                             </div>
                           )}
@@ -53,7 +54,7 @@ export default function Report() {
                               <div>
                                 <div className='text-xl mb-2 font-semibold'>{item.title}</div>
                                 <div className='tex-md font-normal'>{item.desc}</div>
-                                <button className='mt-2 rounded-md border-white border-2 px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
+                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
                               </div>
                             </div>
                           )}

@@ -14,15 +14,15 @@
 
 
 @media (min-width: 768px) {
+    .wrap-report {
+        padding-top: 80px;
+    }
     .kontener-report {
         width: 680px;
     }
 }
 
 @media (min-width: 1125px) {
-    .wrap-report {
-        padding-top: 80px;
-    }
     .kontener-report {
         width: 1025px;
     }

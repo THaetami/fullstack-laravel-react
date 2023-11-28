@@ -6,6 +6,7 @@ import NotFound from './views/NotFound';
 import DefaultLayout from './component/DefaultLayout';
 import GuestLayout from './component/GuestLayout';
 import Report from './views/Report';
+import CashBank from './views/CashBank';
 
 interface RouteConfig {
   path: string;
@@ -29,6 +30,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/report',
         element: <Report />,
+      },
+      {
+        path: '/cash',
+        element: <CashBank />
       },
     ],
   },

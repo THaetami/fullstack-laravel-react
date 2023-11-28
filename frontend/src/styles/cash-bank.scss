@@ -1,0 +1,45 @@
+.wrap-cash-bank {
+    padding-top: 65px;
+    padding-bottom: 10px;
+    overflow: auto;
+    // background-color: white;
+}
+
+.kontener-cash-bank {
+    width: calc(100% - 23px);
+    min-height: 100vh;
+    overflow: auto;
+}
+
+
+
+@media (min-width: 768px) {
+    .kontener-cash-bank {
+        width: 680px;
+        padding: 0 2px 0 2px;
+    }
+}
+
+@media (min-width: 900px) {
+    .kontener-cash-bank {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1125px) {
+    .wrap-cash-bank {
+        padding-top: 80px;
+    }
+    .kontener-cash-bank {
+        width: 890px;
+    }
+}
+
+@media (min-width: 1190px) {
+    .wrap-cash-bank {
+        padding-top: 80px;
+    }
+    .kontener-cash-bank {
+        width: 1025px;
+    }
+}

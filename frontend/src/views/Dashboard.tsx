@@ -10,7 +10,7 @@ export default function Dashboard() {
 
   return (
     <div className="wrap-dashboard h-screen overflow-auto items-center px-1">
-      <div className="kontener mx-auto">
+      <div className="kontener mx-auto mb-10 md:mb-0">
         <div className='text-lg xs:text-2xl lg:text-3xl font-bold text-center mt-5 lg:mt-10'>
           <p>Hallo, {user?.name}</p>
           <p>Aktivitas apa yang ingin Anda lakukan?</p>

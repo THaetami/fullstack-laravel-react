@@ -44,7 +44,7 @@ export default function NavBar() {
         </div>
         <div className="flex items-center space-x-3">
           <div>
-            <div onClick={handleDropdownToggle} className='flex items-center space-x-2 cursor-pointer hover:text-blue-400'>
+            <div onClick={handleDropdownToggle} className={`${openDropdown ? 'text-blue-400' : '' } flex items-center space-x-2 cursor-pointer`}>
               <div className='items-center text-end '>
                 <p className='text-lg hidden md:inline-block'>Tarak Company</p>
                 <p className='text-sm'>{ user?.name }</p>
