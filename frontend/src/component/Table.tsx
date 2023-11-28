@@ -16,7 +16,7 @@ const TheadComp = () => {
 export default function Table() {
   const data = ['Kas', 'Rekening Bank', 'Giro'];
   return (
-    <div className="overflow-x-auto bg-white">
+    <div className="overflow-x-auto bg-white max-h-[300px]">
       <table className="table table-md table-pin-rows table-pin-cols ">
         <thead className="text-sm">
           <TheadComp />

@@ -45,7 +45,7 @@ export default function Report() {
                               <div>
                                 <div className='text-xl mb-2 font-semibold'>{item.title}</div>
                                 <div className='tex-md font-normal'>{item.desc}</div>
-                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
+                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal hover:bg-white hover:border-white'>Lihat Laporan</button>
                               </div>
                             </div>
                           )}
@@ -54,7 +54,7 @@ export default function Report() {
                               <div>
                                 <div className='text-xl mb-2 font-semibold'>{item.title}</div>
                                 <div className='tex-md font-normal'>{item.desc}</div>
-                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal cursor-not-allowed'>Lihat Laporan</button>
+                                <button className='mt-2 rounded-md border-2 border-black px-3 py-1 font-normal hover:bg-white hover:border-white'>Lihat Laporan</button>
                               </div>
                             </div>
                           )}

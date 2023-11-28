@@ -1,10 +1,10 @@
-.wrap-cash-bank {
+.wrap-sales {
     padding-top: 65px;
     padding-bottom: 10px;
     overflow: auto;
 }
 
-.kontener-cash-bank {
+.kontener-sales {
     width: calc(100% - 23px);
     min-height: 100vh;
     overflow: auto;
@@ -13,35 +13,35 @@
 
 
 @media (min-width: 768px) {
-    .kontener-cash-bank {
+    .kontener-sales {
         width: 680px;
         padding: 0 2px 0 2px;
     }
 }
 
 @media (min-width: 900px) {
-    .kontener-cash-bank {
+    .kontener-sales {
         width: 800px;
     }
 }
 
 @media (min-width: 1025px) {
-    .wrap-cash-bank {
+    .wrap-sales {
         padding-top: 80px;
     }
-    .kontener-cash-bank {
+    .kontener-sales {
         width: 740px;
     }
 }
 
 @media (min-width: 1230px) {
-    .kontener-cash-bank {
+    .kontener-sales {
         width: 900px;
     }
 }
 
 @media (min-width: 1280px) {
-    .kontener-cash-bank {
+    .kontener-sales {
         width: 1000px;
     }
 }

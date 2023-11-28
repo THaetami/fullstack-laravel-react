@@ -54,8 +54,8 @@ export default function SideBar() {
           <NavLink to='/home' icon={IoHome} label='Home' />
           <NavLink to='/report' icon={BiSolidReport} label='Report' />
           <hr />
-          <NavLink to='/cash' icon={BsBank2} label='Kas & Bank' />
-          <NavLink to='#' icon={IoPricetagsSharp} label='Sales' />
+          <NavLink to='/cash' icon={BsBank2} label='Cash & Bank' />
+          <NavLink to='/sales' icon={IoPricetagsSharp} label='Sales' />
           <NavLink to='#' icon={FaShoppingCart} label='Purchase' />
           <NavLink to='#' icon={RiCurrencyFill} label='Expense' />
           <hr />

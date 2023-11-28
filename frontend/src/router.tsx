@@ -7,6 +7,7 @@ import DefaultLayout from './component/DefaultLayout';
 import GuestLayout from './component/GuestLayout';
 import Report from './views/Report';
 import CashBank from './views/CashBank';
+import Sales from './views/Sales';
 
 interface RouteConfig {
   path: string;
@@ -34,6 +35,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/cash',
         element: <CashBank />
+      },
+      {
+        path: '/sales',
+        element: <Sales />
       },
     ],
   },
