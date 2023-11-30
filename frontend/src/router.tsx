@@ -8,6 +8,7 @@ import GuestLayout from './component/GuestLayout';
 import Report from './views/Report';
 import CashBank from './views/CashBank';
 import Sales from './views/Sales';
+import Purchases from './views/Purchases';
 
 interface RouteConfig {
   path: string;
@@ -39,6 +40,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/sales',
         element: <Sales />
+      },
+      {
+        path: '/purchases',
+        element: <Purchases />
       },
     ],
   },

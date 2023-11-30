@@ -30,7 +30,7 @@ export default function TableReport() {
 
   return (
     <div className="overflow-x-auto text-md bg-white max-h-[300px]">
-      <table className="table table-md table-pin-rows table-pin-cols ">
+      <table className="table table:sm lg:table-md table-pin-rows table-pin-cols ">
         <thead className="text-sm">
           <TheadComp />
         </thead>

@@ -21,13 +21,11 @@ export default function Tabs({ tabs, currentTab, setCurrentTab, page}: TabsProps
 
   return (
     <div className='container text-md'>
-      <div className="overflow-auto">
-        <div className='tabs flex '>
+        <div className='tabs flex overflow-auto'>
           {categories.map((category, index) => (
             <button key={index} id={category} disabled={currentTab === category} onClick={handleTabClick}>{category}</button>
           ))}
         </div>
-      </div>
       <div className='content px-0 py-3 md:py-6'>
         {categories.map((category, index) => (
           <div key={index} className={`${page === 'Report' ? 'grid grid-cols-1 xs:grid-cols-2': '' } m-0`}>
@@ -38,9 +36,7 @@ export default function Tabs({ tabs, currentTab, setCurrentTab, page}: TabsProps
                     item.desc ? (
                       <CardReport key={item.id}  {...item} />
                     ) : (
-                      <>
-                        <TableReport />
-                      </>
+                      <TableReport key={item.id} />
                     )
                   ))
             }

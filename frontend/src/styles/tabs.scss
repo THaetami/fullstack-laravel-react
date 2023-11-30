@@ -4,14 +4,15 @@
 
     .tabs {
         justify-content: start;
+        padding: 10px 0 10px 0;
 
         button {
             background-color: transparent;
             color: black;
             cursor: pointer;
-            font-size: 18px;
             padding: 9px 12px 9px 12px;
             width: 100%;
+            align-content: center;
             background-color: rgba(255, 255, 255, 0.1);
             transition: all 0.5s ease-out;
             border-bottom: 2px solid black;
