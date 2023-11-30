@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from './views/Login';
 import Register from './views/Register';
-import Dashboard from './views/Dashboard';
+import Home from './views/Home';
 import NotFound from './views/NotFound';
 import DefaultLayout from './component/DefaultLayout';
 import GuestLayout from './component/GuestLayout';
@@ -9,6 +9,7 @@ import Report from './views/Report';
 import CashBank from './views/CashBank';
 import Sales from './views/Sales';
 import Purchases from './views/Purchases';
+import Expense from './views/Expense';
 
 interface RouteConfig {
   path: string;
@@ -27,7 +28,7 @@ const routerConfig: RouteConfig[] = [
       },
       {
         path: '/home',
-        element: <Dashboard />,
+        element: <Home />,
       },
       {
         path: '/report',
@@ -44,6 +45,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/purchases',
         element: <Purchases />
+      },
+      {
+        path: '/expense',
+        element: <Expense />
       },
     ],
   },

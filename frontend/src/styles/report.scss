@@ -14,7 +14,7 @@
 
 @media (min-width: 768px) {
     .kontener-report {
-        width: 680px;
+        width: calc(680px - 20px);
         padding: 0 2px 0 2px;
     }
 }
@@ -42,7 +42,7 @@
 
 @media (min-width: 1280px) {
     .kontener-report {
-        width: 1000px;
+        width: calc(1000px - 20px);
     }
 }
 

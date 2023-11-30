@@ -57,7 +57,7 @@ export default function SideBar() {
           <NavLink to='/cash' icon={BsBank2} label='Cash & Bank' />
           <NavLink to='/sales' icon={IoPricetagsSharp} label='Sales' />
           <NavLink to='/purchases' icon={FaShoppingCart} label='Purchase' />
-          <NavLink to='#' icon={RiCurrencyFill} label='Expense' />
+          <NavLink to='/expense' icon={RiCurrencyFill} label='Expense' />
           <hr />
           <NavLink to='#' icon={RiContactsBook2Fill} label='Contacts' />
           <NavLink to='#' icon={GiCardboardBoxClosed} label='Products' />

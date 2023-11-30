@@ -4,6 +4,7 @@ import { FormInputLogin } from "../utils/dataInterface";
 import baseUrl from "../utils/api-default";
 import { useStateContext } from "../contexts/ContextProvider";
 import '../styles/form-sign-signup.scss';
+import { Helmet } from "react-helmet-async";
 
 
 export interface FormErrors {
@@ -64,28 +65,34 @@ export default function Login() {
   };
 
   return (
-    <div className='login-signup-form animated fadeInDown'>
-      <div className="form">
-        <form onSubmit={onSubmit}>
-          <h1 className='title'>
-            Login into your accout
-          </h1>
-          {
-            errors &&
-            <div className='alert'>
-                {Object.keys(errors).map((key, index) => (
-                  <p key={index}>{errors[key][0]}</p>
-                ))}
-            </div>
-          }
-          <input name="email" onChange={handleInputChange} value={form.email} type="email" placeholder='Email' />
-          <input name="password" onChange={handleInputChange} value={form.password}  type="password" placeholder='Password' />
-          <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-e' } btn btn-block`}>Login</button>
-          <p className='message'>
-            Not Register ? <Link to="/register">Create an account</Link>
-          </p>
-        </form>
+    <>
+      <Helmet>
+        <title>Login | Itungin</title>
+        <meta name='description' content='Login page itungin' />
+      </Helmet>
+      <div className='login-signup-form animated fadeInDown'>
+        <div className="form">
+          <form onSubmit={onSubmit}>
+            <h1 className='title'>
+              Login into your accout
+            </h1>
+            {
+              errors &&
+              <div className='alert'>
+                  {Object.keys(errors).map((key, index) => (
+                    <p key={index}>{errors[key][0]}</p>
+                  ))}
+              </div>
+            }
+            <input name="email" onChange={handleInputChange} value={form.email} type="email" placeholder='Email' />
+            <input name="password" onChange={handleInputChange} value={form.password}  type="password" placeholder='Password' />
+            <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-e' } btn btn-block`}>Login</button>
+            <p className='message'>
+              Not Register ? <Link to="/register">Create an account</Link>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

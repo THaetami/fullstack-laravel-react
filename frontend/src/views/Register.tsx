@@ -5,6 +5,7 @@ import { FormInputRegis } from '../utils/dataInterface';
 import baseUrl from '../utils/api-default';
 import { useStateContext } from '../contexts/ContextProvider';
 import '../styles/form-sign-signup.scss';
+import { Helmet } from 'react-helmet-async';
 
 
 export default function Register() {
@@ -62,30 +63,36 @@ export default function Register() {
   };
 
   return (
-    <div className='login-signup-form animated fadeInDown'>
-      <div className="form">
-        <form onSubmit={onSubmit}>
-          <h1 className='title'>
-            Register for free
-          </h1>
-          {
-            errors &&
-            <div className='alert'>
-                {Object.keys(errors).map((key, index) => (
-                  <p key={index}>{errors[key][0]}</p>
-                ))}
-            </div>
-          }
-          <input name="name" value={form.name} onChange={handleInputChange} type="text" placeholder='Full Name' />
-          <input name="email" value={form.email} onChange={handleInputChange} type="email" placeholder='Email Address' />
-          <input name="password" value={form.password} onChange={handleInputChange} type="password" placeholder='Password' />
-          <input name="passwordConfirmation" value={form.passwordConfirmation} onChange={handleInputChange} type="password" placeholder='Password Confirmation' />
-          <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-enabled' } btn btn-block`}>Register</button>
-          <p className='message'>
-            Already registered? <Link to="/login">Sign in</Link>
-          </p>
-        </form>
+    <>
+      <Helmet>
+        <title>Register | Itungin</title>
+        <meta name='description' content='Register page itungin' />
+      </Helmet>
+      <div className='login-signup-form animated fadeInDown'>
+        <div className="form">
+          <form onSubmit={onSubmit}>
+            <h1 className='title'>
+              Register for free
+            </h1>
+            {
+              errors &&
+              <div className='alert'>
+                  {Object.keys(errors).map((key, index) => (
+                    <p key={index}>{errors[key][0]}</p>
+                  ))}
+              </div>
+            }
+            <input name="name" value={form.name} onChange={handleInputChange} type="text" placeholder='Full Name' />
+            <input name="email" value={form.email} onChange={handleInputChange} type="email" placeholder='Email Address' />
+            <input name="password" value={form.password} onChange={handleInputChange} type="password" placeholder='Password' />
+            <input name="passwordConfirmation" value={form.passwordConfirmation} onChange={handleInputChange} type="password" placeholder='Password Confirmation' />
+            <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-enabled' } btn btn-block`}>Register</button>
+            <p className='message'>
+              Already registered? <Link to="/login">Sign in</Link>
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
