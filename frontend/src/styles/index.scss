@@ -37,7 +37,7 @@ body {
     --navbar-dark-secondary: #2c3e50;
     --navbar-light-primary: #f5f6fa;
     --navbar-light-secondary: #8392a5;
-    --tab-bg: #f6f6f6;
+    // --tab-bg: #f6f6f6;
 }
 
 .notification {
@@ -66,60 +66,7 @@ body {
     background-color: #c60f12;
 }
 
-input {
-  outline: 0;
-  background: #ffffff;
-  width: 100%;
-  border: 2px solid #e6e6e6;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 16px;
-  transition: all 0.3s;
-  font-family: "Gabarito", sans-serif;
-}
 
-input:focus {
-  border-color: black;
-}
-
-.btn {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: black;
-  border: 0;
-  text-decoration: none;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 16px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-
-.btn-disabled {
-    background-color: black;
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.btn-enabled {
-    background-color: black;
-}
-
-.btn-block {
-  width: 100%;
-}
-
-.btn:hover,
-.btn:active,
-.btn:focus {
-  background: #141415;
-}
-
-.text-center {
-  text-align: center;
-}
 
 .animated {
   -webkit-animation-duration: 0.3s;

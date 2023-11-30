@@ -36,9 +36,9 @@ export default function DefaultLayout() {
         <Outlet />
       </div>
       {notification &&
-          <div className={`${notification.setting} notification`}>
-            {notification.message}
-          </div>
+        <div className={`${notification.setting} notification`}>
+          {notification.message}
+        </div>
       }
       <Modal />
     </div>

@@ -11,7 +11,7 @@ export const NavLink: React.FC<NavLinkProps> = ({ to, icon: Icon, label }) => {
 
   return (
     <div className={`${isActive ? 'active-link' : ''} nav-button`}>
-      <Link to={to} className='fas flex justify-center'>
+      <Link to={to} className='fas flex justify-center' aria-label={`Go to ${label}`}>
         <Icon className='size-icon' />
       </Link>
       <Link to={to} className='label-nav'>{label}</Link>

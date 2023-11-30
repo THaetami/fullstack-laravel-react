@@ -1,7 +1,7 @@
 export interface reportList {
     id: number
-    title: string;
-    desc: string;
+    title: string | null;
+    desc: string | null;
     category: string;
 }
 

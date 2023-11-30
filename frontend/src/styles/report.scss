@@ -13,15 +13,34 @@
 
 
 @media (min-width: 768px) {
+    .kontener-report {
+        width: 680px;
+        padding: 0 2px 0 2px;
+    }
+}
+
+@media (min-width: 900px) {
+    .kontener-report {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1025px) {
     .wrap-report {
         padding-top: 80px;
     }
     .kontener-report {
-        width: 680px;
+        width: 740px;
     }
 }
 
-@media (min-width: 1125px) {
+@media (min-width: 1230px) {
+    .kontener-report {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1280px) {
     .kontener-report {
         width: 1000px;
     }

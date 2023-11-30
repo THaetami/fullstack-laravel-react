@@ -1,13 +1,14 @@
+import CardDashboard from "../component/CardDashboard";
 import Footer from "../component/Footer";
-import Table from "../component/Table";
+import TableCashBank from "../component/TableCashBank";
 import '../styles/cash-bank.scss'
 
 export default function CashBank() {
   const data = [
-    { id: 1, desc: 'Pemasukan 30-Hari Mendatang', bg: 'bg-green-200', border: 'border-green-700' },
-    { id: 2, desc: 'Pengeluaran 30-Hari Mendatang', bg: 'bg-red-200', border: 'border-red-700' },
-    { id: 3, desc: 'Saldo Kas', bg: 'bg-blue-200', border: 'border-blue-700' },
-    { id: 4, desc: 'Saldo Kartu Kredit', bg: 'bg-blue-200', border: 'border-blue-700' },
+    { id: 1, desc: 'Pemasukan 30-Hari Mendatang', bg: 'bg-green-200', border: 'border-green-700', link: '' },
+    { id: 2, desc: 'Pengeluaran 30-Hari Mendatang', bg: 'bg-red-200', border: 'border-red-700', link: '' },
+    { id: 3, desc: 'Saldo Kas', bg: 'bg-blue-200', border: 'border-blue-700', link: '' },
+    { id: 4, desc: 'Saldo Kartu Kredit', bg: 'bg-blue-200', border: 'border-blue-700', link: '' },
   ];
 
   return (
@@ -27,18 +28,7 @@ export default function CashBank() {
         <div className="mt-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 xl:gap-2">
             {data.map((d, index) => (
-                <div key={index} className={`${d.border} border-l-4`}>
-                  <div className={`${d.bg}  flex space-x-1 xl:space-x-2 items-center justify-between px-2 h-[65px]`}>
-                    <p>{d.desc}</p>
-                    <div className={`${d.bg} px-1 text-white rounded-md text-center`}>0</div>
-                  </div>
-                  <div className="items-center flex px-2 h-[65px] bg-white">
-                    <div>
-                      <small>Total</small>
-                      <p>Rp. 0,-</p>
-                    </div>
-                  </div>
-                </div>
+                <CardDashboard key={index} {...d}/>
             ))}
           </div>
         </div>
@@ -64,7 +54,7 @@ export default function CashBank() {
           </div>
         </div>
 
-        <Table />
+        <TableCashBank />
       </div>
       <Footer />
     </div>
