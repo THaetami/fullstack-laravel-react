@@ -21,7 +21,7 @@ export default function Sales() {
   return (
     <>
       <Helmet>
-        <title>Sales | Itungin</title>
+        <title>Itungin . Sales</title>
         <meta name='description' content='Sales page itungin' />
       </Helmet>
       <div className="wrap-sales h-screen overflow-auto items-center ">

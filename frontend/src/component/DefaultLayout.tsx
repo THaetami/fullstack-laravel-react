@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { useStateContext } from '../contexts/ContextProvider';
-import baseUrl from '../utils/api-default';
+import axiosInstance from '../utils/api-default';
 import { useEffect } from 'react'
 import SideBar from './SideBar';
 import NavBar from './NavBar';
@@ -15,9 +15,9 @@ export default function DefaultLayout() {
       return;
     }
 
-    baseUrl.get('/user')
+    axiosInstance.get('/user')
       .then(({ data }) => {
-        setUser(data.data)
+          setUser(data.data)
       })
   }, [token, setUser])
 

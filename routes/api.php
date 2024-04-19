@@ -28,4 +28,5 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(AuthController::class)->group(function () {
     Route::post('auth', 'login');
     Route::delete('auth', 'logout');
+    Route::get('refresh', 'refresh');
 });

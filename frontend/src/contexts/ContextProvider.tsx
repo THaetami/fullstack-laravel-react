@@ -58,7 +58,8 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
     _setToken(newToken);
 
     if (newToken) {
-      Cookies.set("token", newToken, { expires: 1 / 24 });
+      // Cookies.set("token", newToken, { expires: 5 / 1440 }); // 7 menit
+      Cookies.set("token", newToken, { expires: 10080 }); // 1minggu
     } else {
       Cookies.remove("token");
     }

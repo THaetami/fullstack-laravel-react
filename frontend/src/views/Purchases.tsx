@@ -21,7 +21,7 @@ export default function Purchases() {
   return (
     <>
       <Helmet>
-        <title>Purchases | Itungin</title>
+        <title>Itungin . Purchases</title>
         <meta name='description' content='Purchases page itungin' />
       </Helmet>
       <div className="wrap-sales h-screen overflow-auto items-center ">

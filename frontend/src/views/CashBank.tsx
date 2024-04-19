@@ -15,7 +15,7 @@ export default function CashBank() {
   return (
     <>
       <Helmet>
-        <title>Cash & Bank | Itungin</title>
+        <title>Itungin . Cash & Bank</title>
         <meta name='description' content='Cash & Bank page itungin' />
       </Helmet>
       <div className="wrap-cash-bank h-screen overflow-auto items-center ">
