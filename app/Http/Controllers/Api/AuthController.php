@@ -17,6 +17,10 @@ class AuthController extends Controller
         $this->middleware('auth:api', ['except' => ['login']]);
     }
 
+    /**
+     * @param  LoginRequest  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
@@ -31,12 +35,18 @@ class AuthController extends Controller
         // ->cookie('token', $token, 60, null, null, false, true);
     }
 
+    /**
+     * @return \Illuminate\Http\Response
+     */
     public function logout()
     {
         auth()->logout();
         return response()->json(['message' => 'Successfully logged out'])->cookie('token', null, -1);
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function refresh()
     {
         $token = Auth::refresh();
