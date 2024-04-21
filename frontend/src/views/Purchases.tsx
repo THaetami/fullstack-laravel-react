@@ -32,7 +32,7 @@ export default function Purchases() {
               <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">Import</button>
             </div>
             <div className="flex justify-end xs:justify-normal space-x-1">
-              <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">Buat Pembelian Baru</button>
+              <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">Buat Pembelian</button>
             </div>
           </HeaderPage>
           <div className="mt-5">

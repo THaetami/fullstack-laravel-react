@@ -28,7 +28,7 @@ export default function CashBank() {
                 <div className="text-lg">Akun Kas</div>
               </div>
               <div className="flex xs:inline justify-end xs:justify-normal">
-                <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">+ Buat Akun Baru</button>
+                <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">+ Buat Akun</button>
               </div>
             </div>
           </div>
