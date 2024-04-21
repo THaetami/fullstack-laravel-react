@@ -7,6 +7,10 @@ import { Helmet } from "react-helmet-async";
 
 import '../styles/views/form-sign-signup.scss';
 
+import { BiSolidKey } from "react-icons/bi";
+import { IoIosMail } from "react-icons/io";
+import FormInput from "../component/FormInput";
+
 export interface FormErrors {
   [key: string]: string[];
 }
@@ -75,6 +79,7 @@ export default function Login() {
             <h1 className='title'>
               Login into your accout
             </h1>
+
             {
               errors &&
               <div className='alert'>
@@ -83,8 +88,15 @@ export default function Login() {
                   ))}
               </div>
             }
-            <input name="email" onChange={handleInputChange} value={form.email} type="email" placeholder='Email' />
-            <input name="password" onChange={handleInputChange} value={form.password}  type="password" placeholder='Password' />
+
+            <FormInput label="Email" type="email" name="email" value={form.email} onChange={handleInputChange}>
+              <IoIosMail className="w-4 h-4"/>
+            </FormInput>
+
+            <FormInput label="Password" type="password" name="password" value={form.password} onChange={handleInputChange}>
+              <BiSolidKey />
+            </FormInput>
+
             <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-e' } btn btn-block`}>Login</button>
             <p className='message'>
               Not Register ? <Link to="/register">Create an account</Link>

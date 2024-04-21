@@ -8,6 +8,10 @@ import { Helmet } from 'react-helmet-async';
 
 import '../styles/views/form-sign-signup.scss';
 
+import { BiSolidKey, BiSolidUser } from 'react-icons/bi';
+import FormInput from '../component/FormInput';
+import { IoIosMail } from 'react-icons/io';
+
 export default function Register() {
   const [formValid, setFormValid] = useState(false);
   const [errors, setErrors] = useState<FormErrors | null>(null);
@@ -74,6 +78,7 @@ export default function Register() {
             <h1 className='title'>
               Register for free
             </h1>
+
             {
               errors &&
               <div className='alert'>
@@ -82,10 +87,23 @@ export default function Register() {
                   ))}
               </div>
             }
-            <input name="name" value={form.name} onChange={handleInputChange} type="text" placeholder='Full Name' />
-            <input name="email" value={form.email} onChange={handleInputChange} type="email" placeholder='Email Address' />
-            <input name="password" value={form.password} onChange={handleInputChange} type="password" placeholder='Password' />
-            <input name="passwordConfirmation" value={form.passwordConfirmation} onChange={handleInputChange} type="password" placeholder='Password Confirmation' />
+
+            <FormInput label="Name" type="text" name="name" value={form.name} onChange={handleInputChange} >
+              <BiSolidUser />
+            </FormInput>
+
+            <FormInput label="Email" type="email" name="email" value={form.email} onChange={handleInputChange}>
+              <IoIosMail className="w-4 h-4"/>
+            </FormInput>
+
+            <FormInput label="Password" type="password" name="password" value={form.password} onChange={handleInputChange}>
+              <BiSolidKey />
+            </FormInput>
+
+            <FormInput label="Password Confirmation" type="password" name="passwordConfirmation" value={form.passwordConfirmation} onChange={handleInputChange}>
+              <BiSolidKey />
+            </FormInput>
+
             <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-enabled' } btn btn-block`}>Register</button>
             <p className='message'>
               Already registered? <Link to="/login">Sign in</Link>
