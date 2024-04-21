@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import '../styles/not-found.scss';
+
+import '../styles/views/not-found.scss';
 
 export default function NotFound() {
   return (

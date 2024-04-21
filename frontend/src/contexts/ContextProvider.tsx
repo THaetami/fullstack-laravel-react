@@ -1,18 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
 import Cookies from "js-cookie";
-
-
-interface UserData {
-  id: number,
-  name: string;
-  email: string;
-  created_at: string;
-}
-
-interface NotifSetting {
-  message: string,
-  setting: string,
-}
+import { NotifSetting, UserData } from "../utils/dataInterface";
 
 interface StateContextProps {
   user: null | UserData;
@@ -47,6 +35,7 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
     name: "",
     email: "",
     created_at: "",
+    updated_at: ""
   });
   const [token, _setToken] = useState<string | null>(Cookies.get("token") ?? null);
   const [notification, _setNotification] = useState<NotifSetting | null>({

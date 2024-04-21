@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import carouselStyles  from '../styles/carousel.module.scss';
+import carouselStyles  from '../styles/components/carousel.module.scss';
 
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);

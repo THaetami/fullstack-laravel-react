@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import CardReport from "./CardReport";
 import { reportList } from '../utils/report-list';
-import '../styles/tabs.scss';
+import '../styles/components/tabs.scss';
 import TableReport from './TableReport';
 
 interface TabsProps {

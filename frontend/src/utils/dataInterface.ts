@@ -9,3 +9,16 @@ export interface FormInputLogin {
     email: string;
     password: string;
 }
+
+export interface UserData {
+  id: number,
+  name: string;
+  email: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface NotifSetting {
+  message: string,
+  setting: string,
+}

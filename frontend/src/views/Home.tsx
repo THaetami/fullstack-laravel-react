@@ -2,8 +2,9 @@ import Carousel from '../component/Carousel';
 import Footer from '../component/Footer';
 import { useStateContext } from '../contexts/ContextProvider'
 import { getData } from '../utils/service-list';
-import '../styles/dashboard.scss'
 import { Helmet } from 'react-helmet-async';
+
+import '../styles/views/dashboard.scss';
 
 export default function Home() {
   const { user } = useStateContext();

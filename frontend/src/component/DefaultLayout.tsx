@@ -21,12 +21,9 @@ export default function DefaultLayout() {
       })
   }, [token, setUser])
 
-
   if (!token) {
     return <Navigate to={'/login'} />
   }
-
-
 
   return (
     <div className='wrap-default-layout'>

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Footer from "../component/Footer";
-import '../styles/sales.scss'
 import CardDashboard from "../component/CardDashboard";
 import { Link } from "react-router-dom";
 import Tabs from "../component/Tabs";
 import { getData } from "../utils/purchases-table-list";
 import HeaderPage from "../component/HeaderPage";
 import { Helmet } from "react-helmet-async";
+
+import '../styles/views/layout-page.scss';
 
 export default function Purchases() {
   const [currentTab, setCurrentTab] = useState('Faktur');
@@ -24,8 +25,8 @@ export default function Purchases() {
         <title>Itungin . Purchases</title>
         <meta name='description' content='Purchases page itungin' />
       </Helmet>
-      <div className="wrap-sales h-screen overflow-auto items-center ">
-        <div className="kontener-sales mx-auto mb-10">
+      <div className="wrap-page h-screen overflow-auto items-center ">
+        <div className="kontener-page mx-auto mb-10">
           <HeaderPage title="Pembelian">
             <div className="flex justify-end xs:justify-normal space-x-1">
               <button className="py-2 px-3 border-2 rounded-md border-slate-300 text-center hover:bg-white hover:border-white">Import</button>

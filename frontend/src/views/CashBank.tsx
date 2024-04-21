@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet-async";
 import CardDashboard from "../component/CardDashboard";
 import Footer from "../component/Footer";
 import TableCashBank from "../component/TableCashBank";
-import '../styles/cash-bank.scss'
+
+import '../styles/views/layout-page.scss';
 
 export default function CashBank() {
   const data = [
@@ -18,8 +19,8 @@ export default function CashBank() {
         <title>Itungin . Cash & Bank</title>
         <meta name='description' content='Cash & Bank page itungin' />
       </Helmet>
-      <div className="wrap-cash-bank h-screen overflow-auto items-center ">
-        <div className="kontener-cash-bank mx-auto mb-10">
+      <div className="wrap-page h-screen overflow-auto items-center ">
+        <div className="kontener-page mx-auto mb-10">
           <div  className="border-b-2 lg:border-b-4 border-black py-3 ">
             <div className="inline xs:flex justify-between items-center">
               <div className="mb-3 xs:mb-0">

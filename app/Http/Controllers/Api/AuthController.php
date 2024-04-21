@@ -31,8 +31,8 @@ class AuthController extends Controller
         $user = new UserResource(Auth::user());
         $token = Auth::attempt($credentials);
 
-        return JsonResponseHelper::respondSuccess(compact('user', 'token'));
-        // ->cookie('token', $token, 60, null, null, false, true);
+        return JsonResponseHelper::respondSuccess(compact('user', 'token'))
+            ->cookie('token', $token, 60, null, null, false, true);
     }
 
     /**
@@ -51,7 +51,7 @@ class AuthController extends Controller
     {
         $token = Auth::refresh();
 
-        return JsonResponseHelper::respondSuccess(compact('token'));
-        // ->cookie('token', $token, 60, null, null, false, true);
+        return JsonResponseHelper::respondSuccess(compact('token'))
+            ->cookie('token', $token, 60, null, null, false, true);
     }
 }

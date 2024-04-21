@@ -1,10 +1,10 @@
-.wrap-report {
+.wrap-page {
     padding-top: 65px;
     padding-bottom: 10px;
     overflow: auto;
 }
 
-.kontener-report {
+.kontener-page {
     width: calc(100% - 23px);
     min-height: 100vh;
     overflow: auto;
@@ -13,37 +13,35 @@
 
 
 @media (min-width: 768px) {
-    .kontener-report {
+    .kontener-page {
         width: calc(680px - 20px);
         padding: 0 2px 0 2px;
     }
 }
 
 @media (min-width: 900px) {
-    .kontener-report {
+    .kontener-page {
         width: 800px;
     }
 }
 
 @media (min-width: 1025px) {
-    .wrap-report {
+    .wrap-page {
         padding-top: 80px;
     }
-    .kontener-report {
+    .kontener-page {
         width: 740px;
     }
 }
 
 @media (min-width: 1230px) {
-    .kontener-report {
+    .kontener-page {
         width: 900px;
     }
 }
 
 @media (min-width: 1280px) {
-    .kontener-report {
+    .kontener-page {
         width: calc(1000px - 20px);
     }
 }
-
-

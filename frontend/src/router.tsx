@@ -10,6 +10,7 @@ import CashBank from './views/CashBank';
 import Sales from './views/Sales';
 import Purchases from './views/Purchases';
 import Expense from './views/Expense';
+import Profile from './views/Profile';
 
 interface RouteConfig {
   path: string;
@@ -49,6 +50,10 @@ const routerConfig: RouteConfig[] = [
       {
         path: '/expense',
         element: <Expense />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { useStateContext } from '../contexts/ContextProvider'
-import '../styles/modal.scss'
+import '../styles/components/modal.scss'
 import baseUrl from '../utils/api-default'
 
 export default function Modal() {
@@ -18,6 +18,7 @@ export default function Modal() {
           name: "",
           email: "",
           created_at: "",
+          updated_at: "",
         })
         setToken(null)
         setOpenModal(false)

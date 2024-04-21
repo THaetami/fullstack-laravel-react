@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\JsonResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,7 @@ class UserController extends Controller
         $this->middleware('auth:api', ['except' => ['store']]);
     }
 
+
     /**
      * @return \Illuminate\Http\JsonResponse
      */
@@ -25,6 +27,7 @@ class UserController extends Controller
         $user = new UserResource(Auth::user());
         return JsonResponseHelper::respondSuccess($user);
     }
+
 
     /**
      * @param  StoreUserRequest  $request
@@ -45,6 +48,33 @@ class UserController extends Controller
             "addedUser" => [
                 "id" => $user->id,
                 "name" => $user->name
+            ]
+        ], 201);
+    }
+
+
+    /**
+     * @param  UpdateUserRequest  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(UpdateUserRequest $request)
+    {
+        $user = auth()->user();
+
+
+        $validatedData = $request->validated();
+
+        if (isset($validatedData['password'])) {
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }
+
+        User::where('id', $user->id)->update($validatedData);
+
+        // dd($user->id);
+        return JsonResponseHelper::respondSuccess([
+            "updatedUser" => [
+                "id" => $user->id,
+                "name" => $user->name,
             ]
         ], 201);
     }

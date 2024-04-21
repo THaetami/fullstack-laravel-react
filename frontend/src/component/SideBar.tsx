@@ -11,7 +11,7 @@ import { RiContactsBook2Fill } from "react-icons/ri";
 import { GiCardboardBoxClosed } from "react-icons/gi";
 import { MdHomeWork } from "react-icons/md";
 import { NavLink } from './NavLink';
-import '../styles/sidebar.scss';
+import '../styles/components/sidebar.scss';
 
 
 

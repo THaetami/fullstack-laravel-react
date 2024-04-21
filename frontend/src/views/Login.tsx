@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { FormInputLogin } from "../utils/dataInterface";
 import baseUrl from "../utils/api-default";
 import { useStateContext } from "../contexts/ContextProvider";
-import '../styles/form-sign-signup.scss';
 import { Helmet } from "react-helmet-async";
 
+import '../styles/views/form-sign-signup.scss';
 
 export interface FormErrors {
   [key: string]: string[];
@@ -45,7 +45,6 @@ export default function Login() {
 
     baseUrl.post('/auth', form)
       .then(({ data }) => {
-        console.log(data)
         setToken(data.data.token);
         setUser(data.data.user);
         setNotification(`Selamat datang ${data.data.user.name}`, 'info')

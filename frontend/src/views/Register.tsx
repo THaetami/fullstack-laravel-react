@@ -4,9 +4,9 @@ import { FormErrors } from './Login';
 import { FormInputRegis } from '../utils/dataInterface';
 import baseUrl from '../utils/api-default';
 import { useStateContext } from '../contexts/ContextProvider';
-import '../styles/form-sign-signup.scss';
 import { Helmet } from 'react-helmet-async';
 
+import '../styles/views/form-sign-signup.scss';
 
 export default function Register() {
   const [formValid, setFormValid] = useState(false);
@@ -48,7 +48,7 @@ export default function Register() {
       password_confirmation: form.passwordConfirmation
     };
 
-    baseUrl.post('/users', payload)
+    baseUrl.post('/user', payload)
       .then(({ data }) => {
         console.log(data)
         navigate('/login');

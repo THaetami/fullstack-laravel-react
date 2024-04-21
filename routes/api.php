@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(UserController::class)->group(function () {
     Route::get('user', 'index');
-    Route::post('users', 'store');
+    Route::post('user', 'store');
+    Route::put('user', 'update');
 });
 
 Route::controller(AuthController::class)->group(function () {

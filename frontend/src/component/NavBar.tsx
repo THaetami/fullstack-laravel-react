@@ -8,12 +8,14 @@ import { TbGridDots } from "react-icons/tb";
 import { MdAccessTime, MdOutlineLiveHelp } from 'react-icons/md'
 import { IoMdLogOut, IoMdNotificationsOutline } from "react-icons/io";
 import { useStateContext } from '../contexts/ContextProvider'
-import '../styles/navbar.scss'
+import '../styles/components/navbar.scss'
+import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
   const { user } = useStateContext();
   const [openDropdown, setOpenDropdown] = useState(false)
   const { setOpenModal } = useStateContext();
+  const isActive = useLocation().pathname === '/profile';
 
   const handleDropdownToggle = () => {
     setOpenDropdown(!openDropdown);
@@ -54,10 +56,10 @@ export default function NavBar() {
             <div className="dropdown-container">
               {openDropdown &&
                 <ul className="dropdown-list text-md ">
-                  <li className="dropdown-list-item flex items-center space-x-2">
+                  <Link to={'/profile'} onClick={handleDropdownToggle} className={`${isActive ? 'active-link' : ''} dropdown-list-item flex items-center space-x-2`}>
                     <FaRegUserCircle  />
                     <div>Profile</div>
-                  </li>
+                  </Link>
                   <li onClick={() => { setOpenModal(true); setOpenDropdown(false); }} className="dropdown-list-item flex items-center space-x-2">
                     <IoMdLogOut />
                     <div>Logout</div>
