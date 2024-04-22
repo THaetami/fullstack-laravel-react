@@ -5,17 +5,20 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\JsonResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
-use App\Http\Resources\UserResource;
+use App\Services\AuthService;
 use Illuminate\Support\Facades\Auth;
-
 
 
 class AuthController extends Controller
 {
-    public function __construct()
+    protected $authService;
+
+    public function __construct(AuthService $authService)
     {
         $this->middleware('auth:api', ['except' => ['login']]);
+        $this->authService = $authService;
     }
+
 
     /**
      * @param  LoginRequest  $request
@@ -24,16 +27,16 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
-        if (!Auth::attempt($credentials)) {
-            return JsonResponseHelper::respondFail("Provided email address or password is incorrect", 422);
+        $authData = $this->authService->attemptLogin($credentials);
+
+        if (!$authData) {
+            return JsonResponseHelper::respondFail('Provided email address or password is incorrect', 422);
         }
 
-        $user = new UserResource(Auth::user());
-        $token = Auth::attempt($credentials);
-
-        return JsonResponseHelper::respondSuccess(compact('user', 'token'))
-            ->cookie('token', $token, 60, null, null, false, true);
+        return JsonResponseHelper::respondSuccess($authData)
+            ->cookie('token', $authData['token'], 60, null, null, false, true);
     }
+
 
     /**
      * @return \Illuminate\Http\Response
@@ -43,6 +46,7 @@ class AuthController extends Controller
         auth()->logout();
         return response()->json(['message' => 'Successfully logged out'])->cookie('token', null, -1);
     }
+
 
     /**
      * @return \Illuminate\Http\JsonResponse
