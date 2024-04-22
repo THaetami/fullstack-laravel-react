@@ -17,7 +17,7 @@ const FormInput: React.FC<FormInputProps> = ({ label, type, name, value, onChang
       name={name}
       value={value}
       type={type}
-      className={`${disabled ? 'bg-white' : '' } grow`}
+      className="bg-white"
       placeholder={label}
     />
   </label>

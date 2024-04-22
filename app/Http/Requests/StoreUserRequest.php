@@ -29,7 +29,7 @@ class StoreUserRequest extends FormRequest
             'password' => [
                 'required',
                 'confirmed',
-                'min:8',
+                'min:6',
                 'regex:/^[a-zA-Z0-9]*$/',
             ],
         ];

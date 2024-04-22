@@ -5,7 +5,7 @@ import baseUrl from "../utils/api-default";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Helmet } from "react-helmet-async";
 
-import '../styles/views/form-sign-signup.scss';
+import guestStyle from  '../styles/views/form-sign-signup.module.scss';
 
 import { BiSolidKey } from "react-icons/bi";
 import { IoIosMail } from "react-icons/io";
@@ -28,7 +28,7 @@ export default function Login() {
 
   useEffect(() => {
     const { email, password } = form
-    if ( email.trim() === '' || password.trim() === '' ) {
+    if ( email.trim() === '' || email.length < 5 || password.trim() === '' || password.length < 6 ) {
       setFormValid(false)
     } else {
       setFormValid(true)
@@ -62,6 +62,10 @@ export default function Login() {
             setErrors({
               email: [response.data.message]
             })
+            setForm({
+              email: "",
+              password: ""
+            })
           }
         }
       })
@@ -73,16 +77,16 @@ export default function Login() {
         <title>Login | Itungin</title>
         <meta name='description' content='Login page itungin' />
       </Helmet>
-      <div className='login-signup-form animated fadeInDown'>
-        <div className="form">
+      <div className={`${guestStyle.loginSignupForm} animated fadeInDown`}>
+        <div className={`${guestStyle.form}`}>
           <form onSubmit={onSubmit}>
-            <h1 className='title'>
+            <h1 className={`${guestStyle.title}`}>
               Login into your accout
             </h1>
 
             {
               errors &&
-              <div className='alert'>
+              <div className={`${guestStyle.alert}`}>
                   {Object.keys(errors).map((key, index) => (
                     <p key={index}>{errors[key][0]}</p>
                   ))}
@@ -97,8 +101,8 @@ export default function Login() {
               <BiSolidKey />
             </FormInput>
 
-            <button disabled={!formValid}  className={`${!formValid ? 'btn-disabled' : 'btn-e' } btn btn-block`}>Login</button>
-            <p className='message'>
+            <button disabled={!formValid} className={`${!formValid ? `${guestStyle.btnDisabled}` : `${guestStyle.btnEnabled}`} ${guestStyle.btn} ${guestStyle.btnBlock}`}>Register</button>
+            <p className={`${guestStyle.message}`}>
               Not Register ? <Link to="/register">Create an account</Link>
             </p>
           </form>
