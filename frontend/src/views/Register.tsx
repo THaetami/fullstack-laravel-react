@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormErrors } from './Login';
 import { FormInputRegis } from '../utils/dataInterface';
-import baseUrl from '../utils/api-default';
+import axiosInstance from '../utils/api-default';
 import { useStateContext } from '../contexts/ContextProvider';
 import { Helmet } from 'react-helmet-async';
 
@@ -57,7 +57,7 @@ export default function Register() {
       password_confirmation: form.passwordConfirmation
     };
 
-    baseUrl.post('/user', payload)
+    axiosInstance.post('/user', payload)
       .then(({ data }) => {
         console.log(data)
         navigate('/login');

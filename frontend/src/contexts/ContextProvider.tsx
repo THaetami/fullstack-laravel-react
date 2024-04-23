@@ -1,23 +1,23 @@
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from "react";
 import Cookies from "js-cookie";
-import { NotifSetting, UserData } from "../utils/dataInterface";
+import { NotifSetting, UserData, modalSetting } from "../utils/dataInterface";
 
 interface StateContextProps {
   user: null | UserData;
   token: null | string;
   notification: null | NotifSetting;
-  openModal: boolean;
+  openModal: modalSetting;
   setUser: Dispatch<SetStateAction<UserData>>;
   setToken: (token: string | null) => void;
   setNotification: (message: string | null, setting: string | null) => void;
-  setOpenModal: (arg0: boolean) => void;
+  setOpenModal: (modal: modalSetting) => void;
 }
 
 const StateContext = createContext<StateContextProps>({
   user: null,
   token: null,
   notification: null,
-  openModal: false,
+  openModal: { toggle: false, setting: "" },
   setUser: () => {},
   setToken: () => { },
   setNotification: () => { },
@@ -29,9 +29,18 @@ interface ContextProviderProps {
 }
 
 export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
-  const [openModal, setOpenModal] = useState<boolean>(false)
+  const [openModal, setOpenModal] = useState<modalSetting>({
+    toggle: false,
+    setting: ""
+  });
+
+  const handleSetOpenModal = (modal: modalSetting) => {
+    setOpenModal(modal);
+  }
+
   const [user, setUser] = useState<UserData>({
     id: 0,
+    image: "",
     name: "",
     email: "",
     created_at: "",
@@ -41,7 +50,7 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
   const [notification, _setNotification] = useState<NotifSetting | null>({
     message: '',
     setting: '',
-  })
+  });
 
   const setToken = (newToken: string | null) => {
     _setToken(newToken);
@@ -74,7 +83,7 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
         setUser,
         setToken,
         setNotification,
-        setOpenModal
+        setOpenModal: handleSetOpenModal
       }}
     >
       {children}

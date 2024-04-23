@@ -24,6 +24,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('user', 'index');
     Route::post('user', 'store');
     Route::put('user', 'update');
+    Route::post('user/upload', 'uploadProfile');
 });
 
 Route::controller(AuthController::class)->group(function () {

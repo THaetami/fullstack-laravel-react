@@ -12,6 +12,7 @@ export interface FormInputLogin {
 
 export interface UserData {
   id: number,
+  image: string,
   name: string;
   email: string;
   created_at: string;
@@ -21,4 +22,9 @@ export interface UserData {
 export interface NotifSetting {
   message: string,
   setting: string,
+}
+
+export interface modalSetting {
+    toggle: boolean,
+    setting: string
 }

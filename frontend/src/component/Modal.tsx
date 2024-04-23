@@ -1,59 +1,57 @@
 import { useStateContext } from '../contexts/ContextProvider'
 import '../styles/components/modal.scss'
-import baseUrl from '../utils/api-default'
+import axiosInstance from '../utils/api-default'
+import CropImage from './CropImage';
 
 export default function Modal() {
   const { openModal, setOpenModal, setToken, setUser } = useStateContext()
 
-  const submitButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault()
-  }
+  // const submitButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  //   e.preventDefault()
+  // }
 
   const onLogout = (e: React.MouseEvent) => {
     e.preventDefault();
-    baseUrl.delete('/auth')
+    axiosInstance.delete('/auth')
       .then(() => {
         setUser({
           id: 0,
+          image: "",
           name: "",
           email: "",
           created_at: "",
           updated_at: "",
         })
         setToken(null)
-        setOpenModal(false)
+        setOpenModal({ toggle: false, setting: ""})
       })
   };
 
   return (
     <> {
-        openModal && (
+        openModal.toggle && (
           <div id="myModal" className="modal-custom animated fadeInDown">
-              <div className={`modal-content ${!openModal ? 'mt-detail' : 'mt-delete'}`}>
-                  <div className={`modal-card ${!openModal ? 'detail-modal' : 'delete-modal'}`}>
-                    <div className="modal-card-delete__body">
+              <div className={`modal-content ${openModal.setting !== "kecil" ? 'mt-besar' : 'mt-kecil'}`}>
+                  <div className={`modal-card ${openModal.setting !== "kecil" ? 'besar-modal' : 'kecil-modal'}`}>
+                    <div className="modal-card-kecil__body">
                         <div className="close-wrap flex justify-end">
-                            <div onClick={() => setOpenModal(false)} className="close">&times;</div>
+                            <div onClick={() => setOpenModal({ toggle: false, setting: ""})} className="close">&times;</div>
                         </div>
-                        {!openModal ? (
-                            <>
-                                <div className="detail-modal__wrap">
-                                    <div className="detail-modal__title"></div>
+                        { openModal.setting === "besar" &&
+                          <div className="besar-modal__wrap">
+                            <div className="besar-modal__title"></div>
+                            <CropImage />
+                            <div className="besar-modal__title"></div>
+                          </div>
+                        }
 
-                                </div>
-                                <div className="wrap-button">
-                                    <button onClick={submitButton} className="pointer button-custom">close</button>
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                <div>Logout ??</div>
-                                <div className="wrap-button flex justify-end">
-                                    <button onClick={onLogout} className="pointer button-custom">Yes</button>
-                                </div>
-                            </>
-
-                            )
+                        { openModal.setting === "kecil" &&
+                          <>
+                            <div>Logout ??</div>
+                            <div className="wrap-button flex justify-end">
+                                <button onClick={onLogout} className="pointer button-custom">Yes</button>
+                            </div>
+                          </>
                         }
                     </div>
                 </div>

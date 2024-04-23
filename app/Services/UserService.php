@@ -38,4 +38,30 @@ class UserService
 
         return $user->fresh();
     }
+
+
+    public function upload($file, $userId)
+    {
+        $dest = 'storage/upload/';
+        $newImageName = 'UIMG' . date('YmdHis') . uniqid() . '.jpg';
+
+        $move = $file->move(public_path($dest), $newImageName);
+
+        if (!$move) {
+            return null;
+        }
+
+        $this->deletePreviousImage($userId, $dest);
+
+        return $newImageName;
+    }
+
+    private function deletePreviousImage($userId, $dest)
+    {
+        $userInfo = User::where('id', $userId)->pluck('image')->first();
+
+        if ($userInfo != '') {
+            unlink($dest . $userInfo);
+        }
+    }
 }

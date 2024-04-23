@@ -6,8 +6,11 @@ use App\Helpers\JsonResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\UploadImageUserRequest;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use App\Services\UserService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -70,5 +73,25 @@ class UserController extends Controller
                 "name" => $updatedUser->name,
             ]
         ], 201);
+    }
+
+
+    public function uploadProfile(UploadImageUserRequest $request)
+    {
+        $request->validated();
+
+        $file = $request->file('profile');
+
+        $newImageName = $this->userService->upload($file, auth()->user()->id);
+
+        if (!$newImageName) {
+            return response()->json(['status' => 0, 'msg' => 'Failed to upload image']);
+        }
+
+        $user = User::find(auth()->user()->id);
+        $user->image = $newImageName;
+        $user->save();
+
+        return JsonResponseHelper::respondSuccess("Your profile picture updated", 201);
     }
 }

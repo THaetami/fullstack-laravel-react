@@ -11,8 +11,8 @@ import { RiContactsBook2Fill } from "react-icons/ri";
 import { GiCardboardBoxClosed } from "react-icons/gi";
 import { MdHomeWork } from "react-icons/md";
 import { NavLink } from './NavLink';
-import '../styles/components/sidebar.scss';
 
+import '../styles/components/sidebar.scss';
 
 
 export default function SideBar() {
@@ -68,7 +68,7 @@ export default function SideBar() {
         <div id="nav-footer">
           <div id="nav-footer-heading">
             <div id="nav-footer-avatar">
-              <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" alt="Avatar" />
+              <img src={user?.image ? `http://laravel-react-fullstack.test/storage/upload/${user.image}` : "http://laravel-react-fullstack.test/default-image.png"}  alt="Avatar" />
             </div>
             <div id="nav-footer-titlebox">
               <a id="nav-footer-title" href="#" target="_blank">{user?.name}</a>

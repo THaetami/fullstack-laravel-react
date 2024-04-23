@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { FormInputLogin } from "../utils/dataInterface";
-import baseUrl from "../utils/api-default";
+import axiosInstance from "../utils/api-default";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Helmet } from "react-helmet-async";
 
@@ -47,7 +47,7 @@ export default function Login() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    baseUrl.post('/auth', form)
+    axiosInstance.post('/auth', form)
       .then(({ data }) => {
         setToken(data.data.token);
         setUser(data.data.user);

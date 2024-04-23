@@ -60,7 +60,7 @@ export default function NavBar() {
                     <FaRegUserCircle  />
                     <div>Profile</div>
                   </Link>
-                  <li onClick={() => { setOpenModal(true); setOpenDropdown(false); }} className="dropdown-list-item flex items-center space-x-2">
+                  <li onClick={() => { setOpenModal({ toggle: true, setting: "kecil"}); setOpenDropdown(false); }} className="dropdown-list-item flex items-center space-x-2">
                     <IoMdLogOut />
                     <div>Logout</div>
                   </li>
