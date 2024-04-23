@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FormErrors } from './Login';
-import { FormInputRegis } from '../utils/dataInterface';
+import { FormErrors, FormInputRegis } from '../utils/dataInterface';
 import axiosInstance from '../utils/api-default';
 import { useStateContext } from '../contexts/ContextProvider';
 import { Helmet } from 'react-helmet-async';
-
-import guestStyle from '../styles/views/form-sign-signup.module.scss';
-
 import { BiSolidKey, BiSolidUser } from 'react-icons/bi';
 import FormInput from '../component/FormInput';
 import { IoIosMail } from 'react-icons/io';
+
+import guestStyle from '../styles/views/form-sign-signup.module.scss';
+
 
 export default function Register() {
   const [formValid, setFormValid] = useState(false);

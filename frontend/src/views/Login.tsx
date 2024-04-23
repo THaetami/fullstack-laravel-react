@@ -1,19 +1,15 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
-import { FormInputLogin } from "../utils/dataInterface";
+import { FormErrors, FormInputLogin } from "../utils/dataInterface";
 import axiosInstance from "../utils/api-default";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Helmet } from "react-helmet-async";
-
-import guestStyle from  '../styles/views/form-sign-signup.module.scss';
-
 import { BiSolidKey } from "react-icons/bi";
 import { IoIosMail } from "react-icons/io";
 import FormInput from "../component/FormInput";
 
-export interface FormErrors {
-  [key: string]: string[];
-}
+import guestStyle from  '../styles/views/form-sign-signup.module.scss';
+
 
 export default function Login() {
   const [formValid, setFormValid] = useState(false)

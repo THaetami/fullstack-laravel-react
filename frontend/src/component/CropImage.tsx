@@ -3,10 +3,10 @@ import { useStateContext } from '../contexts/ContextProvider';
 import Cropper, { ReactCropperElement } from "react-cropper";
 import axiosInstance from '../utils/api-default';
 import { dataURLtoBlob, getUser } from '../utils/helper';
+import { FormErrors } from '../utils/dataInterface';
 
 import "cropperjs/dist/cropper.css";
 import '../styles/components/crop-image.scss'
-import { FormErrors } from '../views/Login';
 
 
 export default function CropImage() {
@@ -38,7 +38,6 @@ export default function CropImage() {
   const getCropData = () => {
     if (typeof cropperRef.current?.cropper !== "undefined") {
       setCropData(cropperRef.current?.cropper.getCroppedCanvas().toDataURL());
-
     }
   };
 

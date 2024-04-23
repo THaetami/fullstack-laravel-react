@@ -21,7 +21,6 @@ axiosInstance.interceptors.request.use((config) => {
 axiosInstance.interceptors.response.use(
     async (response) => {
         const token = Cookies.get("token");
-        // console.log(`Token: ${token}`);
 
         if (token) {
             const decodedToken = jwtDecode(token);
@@ -39,7 +38,6 @@ axiosInstance.interceptors.response.use(
                             }
                         });
                         const newToken = refreshTokenResponse.data.data.token;
-                        // console.log(`New token from refresh: ${newToken}`);
 
                         Cookies.remove("token");
                         // Cookies.set("token", newToken, { expires: 5 / 1440 });

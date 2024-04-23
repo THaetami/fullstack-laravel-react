@@ -10,6 +10,10 @@ export interface FormInputLogin {
     password: string;
 }
 
+export interface FormErrors {
+  [key: string]: string[];
+}
+
 export interface UserData {
   id: number,
   image: string,

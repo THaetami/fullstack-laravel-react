@@ -3,11 +3,12 @@ import { useStateContext } from "../contexts/ContextProvider";
 import Footer from "../component/Footer";
 import HeaderPage from "../component/HeaderPage";
 import { useState } from "react";
-
-import '../styles/views/layout-page.scss';
 import ProfileImage from "../component/ProfileImage";
 import ProfileForm from "../component/ProfileForm";
-import { FormErrors } from "./Login";
+import { FormErrors } from "../utils/dataInterface";
+
+import '../styles/views/layout-page.scss';
+
 
 export default function Profile() {
 

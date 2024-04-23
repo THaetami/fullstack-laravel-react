@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import axiosInstance from "../utils/api-default";
-import { getUser } from "../utils/helper";
-import { FormErrors } from "../views/Login";
-import { FormInputRegis } from "../utils/dataInterface";
 import FormInput from "./FormInput";
 import { IoIosMail } from "react-icons/io";
 import { BiSolidKey, BiSolidUser } from "react-icons/bi";
+import { getUser } from "../utils/helper";
+import { FormErrors, FormInputRegis } from "../utils/dataInterface";
 
 
 interface ProfileFormProps {
