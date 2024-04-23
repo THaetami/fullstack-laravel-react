@@ -6,11 +6,13 @@ import { dataURLtoBlob, getUser } from '../utils/helper';
 
 import "cropperjs/dist/cropper.css";
 import '../styles/components/crop-image.scss'
+import { FormErrors } from '../views/Login';
 
 
 export default function CropImage() {
 
   const { user, setUser, setNotification, setOpenModal } = useStateContext();
+  const [errors, setErrors] = useState<FormErrors | null>(null);
 
   const [change, setChange] = useState<boolean>(false);
   const [image, setImage] = useState<string | undefined>(user?.image);
@@ -20,6 +22,7 @@ export default function CropImage() {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     e.preventDefault();
+    setCropData("");
     const files = e.target.files;
     if (files && files.length > 0) {
       const reader = new FileReader();
@@ -37,20 +40,19 @@ export default function CropImage() {
       setCropData(cropperRef.current?.cropper.getCroppedCanvas().toDataURL());
 
     }
-    console.log(cropData);
   };
 
    const onSubmit = (e: React.FormEvent) => {
-     e.preventDefault();
+    e.preventDefault();
 
-     const formData = new FormData();
+    const formData = new FormData();
 
-     if (cropData) {
-        const blob = dataURLtoBlob(cropData);
-        formData.append('profile', blob, 'profile.png');
+    if (cropData) {
+      const blob = dataURLtoBlob(cropData);
+      formData.append('profile', blob, 'profile.png');
     }
 
-     axiosInstance.post('/user/upload', formData, {
+    axiosInstance.post('/user/upload', formData, {
        headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -65,7 +67,7 @@ export default function CropImage() {
     .catch(err => {
       const response = err.response
       if (response && response.status === 422) {
-        console.log(response)
+        setErrors(response.data.errors);
       }
     })
   };
@@ -102,6 +104,16 @@ export default function CropImage() {
           <div className="m-0 w-full" onClick={() => setChange(true)} >
             <input type="file" onChange={onChange} className="file-input text-sm file-input-bordered w-full max-w-xs cursor-pointer" />
           </div>
+
+           {
+              errors &&
+              <div className="bg-red-400 text-white mb-[3px] block text-sm p-1 mt-3 rounded-md">
+                  {Object.keys(errors).map((key, index) => (
+                    <p key={index}>{errors[key][0]}</p>
+                  ))}
+              </div>
+            }
+
           {cropData === "" ? (
             <button onClick={getCropData} className="btn w-full m-0">Crop</button>
           ) : (
