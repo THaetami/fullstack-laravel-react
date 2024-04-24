@@ -5,10 +5,34 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "axios": "^1.1.2",
+        "@types/js-cookie": "^3.0.6",
+        "@types/react": "^18.2.79",
+        "@types/react-dom": "^18.2.25",
+        "@typescript-eslint/eslint-plugin": "^7.7.1",
+        "@typescript-eslint/parser": "^7.7.1",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.19",
+        "axios": "^1.6.8",
+        "daisyui": "^4.10.2",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.6",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
+        "postcss": "^8.4.38",
+        "sass": "^1.75.0",
+        "tailwindcss": "^3.4.3",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "js-cookie": "^3.0.5",
+        "jwt-decode": "^4.0.0",
+        "react": "^18.2.0",
+        "react-cropper": "^2.3.3",
+        "react-dom": "^18.2.0",
+        "react-helmet-async": "^2.0.4",
+        "react-icons": "^5.1.0",
+        "react-router-dom": "^6.23.0",
+        "typescript": "^5.4.5"
     }
 }

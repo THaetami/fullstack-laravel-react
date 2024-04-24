@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",                               // Tentukan versi ECMAScript target output
+    "module": "esnext",                            // Gunakan sistem modul ESNext (ES6+)
+    "strict": true,                                // Aktifkan semua opsi strict type-checking
+    "jsx": "react",                                // Support JSX dalam file TypeScript (React)
+    "esModuleInterop": true,                       // Mengizinkan impor default dari modul tanpa export default
+    "moduleResolution": "node",                    // Strategi resolusi modul node (untuk NPM packages)
+    "skipLibCheck": true,                          // Lewati pemeriksaan tipe pada deklarasi file dari lib
+    "forceConsistentCasingInFileNames": true,      // Menghindari rujukan dengan perbedaan kapitalisasi pada nama file
+    "allowSyntheticDefaultImports": true,          // Izinkan impor default sintetis dari modul tanpa eksport default
+    "resolveJsonModule": true                      // Izinkan impor file .json sebagai modul
+    // "allowImportingTsExtensions": true
+},
+  "include": [
+    "resources/js/**/*"                            // Sertakan semua file dalam direktori ini untuk diproses oleh TypeScript
+  ]
+}
