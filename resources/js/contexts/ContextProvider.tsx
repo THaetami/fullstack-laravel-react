@@ -46,7 +46,7 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
     created_at: "",
     updated_at: ""
   });
-  const [token, _setToken] = useState<string | null>(Cookies.get("token") ?? null);
+  const [token, _setToken] = useState<string | null>(Cookies.get("jwt") ?? null);
   const [notification, _setNotification] = useState<NotifSetting | null>({
     message: '',
     setting: '',
@@ -57,9 +57,9 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
 
     if (newToken) {
       // Cookies.set("token", newToken, { expires: 5 / 1440 }); // 7 menit
-      Cookies.set("token", newToken, { expires: 10080 }); // 1minggu
+      Cookies.set("jwt", newToken, { expires: 10080 }); // 1minggu
     } else {
-      Cookies.remove("token");
+      Cookies.remove("jwt");
     }
   };
 

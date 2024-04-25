@@ -10,10 +10,9 @@ import { IoMdLogOut, IoMdNotificationsOutline } from "react-icons/io";
 import { useStateContext } from '../contexts/ContextProvider'
 import { Link, useLocation } from 'react-router-dom';
 
-// import '../styles/components/navbar.scss';
-// import '../../sass/component/navbar.scss';
+import '../../sass/component/navbar.scss';
 
-export default function NavBar() {
+const NavBar = () => {
   const { user } = useStateContext();
   const [openDropdown, setOpenDropdown] = useState(false)
   const { setOpenModal } = useStateContext();
@@ -83,3 +82,5 @@ export default function NavBar() {
     )
 
 }
+
+export default NavBar;

@@ -8,7 +8,7 @@ interface CardDashboardProps {
   link: string | null
 }
 
-export default function CardDashboard({border, bg, desc }: CardDashboardProps) {
+const CardDashboard = ({border, bg, desc }: CardDashboardProps) => {
   return (
     <div className={`${border} border-l-4`}>
       <div className={`${bg}  flex space-x-1 xl:space-x-2 items-center justify-between px-2 h-[65px]`}>
@@ -24,3 +24,5 @@ export default function CardDashboard({border, bg, desc }: CardDashboardProps) {
     </div>
   )
 }
+
+export default CardDashboard;

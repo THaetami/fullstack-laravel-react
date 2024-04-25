@@ -1,13 +1,12 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import CardDashboard from "../component/CardDashboard";
 import Footer from "../component/Footer";
 import TableCashBank from "../component/TableCashBank";
 
-// import '../styles/views/layout-page.scss';
-// import '../../sass/view/layout-page.scss';
-import React from "react";
+import '../../sass/view/layout-page.scss';
 
-export default function CashBank() {
+const CashBank = () => {
   const data = [
     { id: 1, desc: 'Pemasukan 30-Hari Mendatang', bg: 'bg-green-200', border: 'border-green-700', link: '' },
     { id: 2, desc: 'Pengeluaran 30-Hari Mendatang', bg: 'bg-red-200', border: 'border-red-700', link: '' },
@@ -70,3 +69,5 @@ export default function CashBank() {
     </>
   )
 }
+
+export default CashBank;

@@ -5,10 +5,9 @@ import { useState } from 'react';
 import { getData } from '../utils/report-list';
 import { Helmet } from 'react-helmet-async';
 
-// import '../styles/views/layout-page.scss';
-// import '../../css/view/layout-page.scss';
+import '../../sass/view/layout-page.scss';
 
-export default function Report() {
+const Report = () => {
   const [currentTab, setCurrentTab] = useState('Sales');
   const tabs = getData();
 
@@ -33,3 +32,5 @@ export default function Report() {
     </>
   )
 }
+
+export default Report;

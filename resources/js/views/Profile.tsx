@@ -8,10 +8,9 @@ import ProfileImage from "../component/ProfileImage";
 import ProfileForm from "../component/ProfileForm";
 import { FormErrors } from "../utils/dataInterface";
 
-// import '../styles/views/layout-page.scss';
-// import '../../sass/view/layout-page.scss';
+import '../../sass/view/layout-page.scss';
 
-export default function Profile() {
+const Profile = () => {
 
   const [openEdit, setOpenEdit] = useState<boolean>(false);
   const [errors, setErrors] = useState<FormErrors | null>(null);
@@ -76,3 +75,5 @@ export default function Profile() {
     </>
   )
 }
+
+export default Profile;

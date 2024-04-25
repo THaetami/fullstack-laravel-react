@@ -5,10 +5,9 @@ import { useStateContext } from '../contexts/ContextProvider'
 import { getData } from '../utils/service-list';
 import { Helmet } from 'react-helmet-async';
 
-// import '../styles/views/dashboard.scss';
-// import '../../sass/view/dashboard.scss';
+import '../../sass/view/dashboard.scss';
 
-export default function Home() {
+const Home = () => {
   const { user } = useStateContext();
   const service = getData();
 
@@ -41,3 +40,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home;

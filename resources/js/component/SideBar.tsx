@@ -13,10 +13,9 @@ import { GiCardboardBoxClosed } from "react-icons/gi";
 import { MdHomeWork } from "react-icons/md";
 import { NavLink } from './NavLink';
 
-// import '../styles/components/sidebar.scss';
-// import '../../sass/component/sidebar.scss';
+import '../../sass/component/sidebar.scss';
 
-export default function SideBar() {
+const SideBar = () => {
   const navToggleRef = useRef<HTMLInputElement>(null);
   const { user } = useStateContext();
 
@@ -86,3 +85,5 @@ export default function SideBar() {
     </>
   )
 }
+
+export default SideBar;

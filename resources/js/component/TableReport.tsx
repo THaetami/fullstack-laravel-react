@@ -17,7 +17,7 @@ const TheadComp = () => {
   )
 }
 
-export default function TableReport() {
+const TableReport = () => {
   const data = [{
     tanggal: '28/11/2023',
     no: 'Sales Invoice #10001',
@@ -57,3 +57,6 @@ export default function TableReport() {
     </div>
   )
 }
+
+
+export default TableReport;

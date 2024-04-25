@@ -8,11 +8,10 @@ import { BiSolidKey, BiSolidUser } from 'react-icons/bi';
 import FormInput from '../component/FormInput';
 import { IoIosMail } from 'react-icons/io';
 
-// import guestStyle from '../styles/views/form-sign-signup.module.scss';
 import guestStyle from '../../sass/view/form-sign-signup.module.scss';
 
 
-export default function Register() {
+const Register = () => {
   const [formValid, setFormValid] = useState(false);
   const [errors, setErrors] = useState<FormErrors | null>(null);
   const navigate = useNavigate();
@@ -119,3 +118,5 @@ export default function Register() {
     </>
   )
 }
+
+export default Register;

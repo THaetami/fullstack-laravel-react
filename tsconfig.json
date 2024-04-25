@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["dom", "es2017"],
     "target": "es6",                               // Tentukan versi ECMAScript target output
     "module": "esnext",                            // Gunakan sistem modul ESNext (ES6+)
     "strict": true,                                // Aktifkan semua opsi strict type-checking

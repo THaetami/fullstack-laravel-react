@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-// import carouselStyles  from '../styles/components/carousel.module.scss';
 import carouselStyles from '../../sass/component/carousel.module.scss';
 
-export default function Carousel() {
+const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const images = [
       `Cukup beberapa klik untuk migrasi data perusahaan Anda ke Jurnal!`,
@@ -70,3 +69,5 @@ export default function Carousel() {
     </div>
   )
 }
+
+export default Carousel;

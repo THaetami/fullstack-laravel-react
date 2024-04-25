@@ -5,7 +5,7 @@ interface HeaderPageProps {
   children: React.ReactNode;
 }
 
-export default function HeaderPage({ children, title }: HeaderPageProps) {
+const HeaderPage = ({ children, title }: HeaderPageProps) => {
   return (
     <div  className="border-b-2 lg:border-b-4 border-black py-3">
       <div className="inline xs:flex justify-between items-center">
@@ -21,3 +21,5 @@ export default function HeaderPage({ children, title }: HeaderPageProps) {
     </div>
   )
 }
+
+export default HeaderPage

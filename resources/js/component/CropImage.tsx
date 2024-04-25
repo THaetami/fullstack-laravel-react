@@ -7,11 +7,9 @@ import { dataURLtoBlob, getUser } from '../utils/helper';
 import { FormErrors } from '../utils/dataInterface';
 
 import "cropperjs/dist/cropper.css";
-// import '../../sass/component/crop-image.scss';
-// import '../styles/components/crop-image.scss'
+import '../../sass/component/crop-image.scss';
 
-
-export default function CropImage() {
+const CropImage = () => {
 
   const { user, setUser, setNotification, setOpenModal } = useStateContext();
   const [errors, setErrors] = useState<FormErrors | null>(null);
@@ -129,3 +127,5 @@ export default function CropImage() {
     </>
   )
 }
+
+export default CropImage;

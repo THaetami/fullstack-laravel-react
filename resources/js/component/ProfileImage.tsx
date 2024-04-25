@@ -3,7 +3,6 @@ import { useStateContext } from '../contexts/ContextProvider';
 import React from 'react';
 
 
-
 const ProfileImage = () => {
 
   const { user, setOpenModal } = useStateContext();

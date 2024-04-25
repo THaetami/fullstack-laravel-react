@@ -8,20 +8,20 @@ const axiosInstance = axios.create({
     baseURL: `${apiBaseUrl}/api`
 });
 
-
 axiosInstance.defaults.withCredentials = true
 
 axiosInstance.interceptors.request.use((config) => {
-    const token = Cookies.get("token");
+    const token = Cookies.get("jwt");
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
 });
 
+
 axiosInstance.interceptors.response.use(
     async (response) => {
-        const token = Cookies.get("token");
+        const token = Cookies.get("jwt");
 
         if (token) {
             const decodedToken = jwtDecode(token);
@@ -40,9 +40,9 @@ axiosInstance.interceptors.response.use(
                         });
                         const newToken = refreshTokenResponse.data.data.token;
 
-                        Cookies.remove("token");
+                        Cookies.remove("jwt");
                         // Cookies.set("token", newToken, { expires: 5 / 1440 });
-                        Cookies.set("token", newToken, { expires: 10080 }); // 1 minggu
+                        Cookies.set("jwt", newToken, { expires: 10080 }); // 1 minggu
 
                         response.headers.Authorization = `Bearer ${newToken}`;
                     } catch (error) {
@@ -58,7 +58,7 @@ axiosInstance.interceptors.response.use(
         try {
             const { response } = error;
             if (response && response.status === 401) {
-                Cookies.remove("token");
+                Cookies.remove("jwt");
             }
         } catch (e) {
             console.error(e);

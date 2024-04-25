@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
-// import '../styles/views/not-found.scss';
-// import '../../sass/view/not-found.scss';
+import '../../sass/view/not-found.scss';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <>
       <Helmet>
@@ -20,3 +19,5 @@ export default function NotFound() {
     </>
   )
 }
+
+export default NotFound;

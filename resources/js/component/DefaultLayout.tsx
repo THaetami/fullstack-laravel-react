@@ -7,11 +7,10 @@ import SideBar from './SideBar';
 import NavBar from './NavBar';
 import Modal from './Modal';
 
-// import '../styles/default-layout.scss';
-// import '../../sass/default-layout.scss';
+import '../../sass/default-layout.scss';
 
 
-export default function DefaultLayout() {
+const DefaultLayout = () => {
   const { token, setUser, notification } = useStateContext();
 
   useEffect(() => {
@@ -45,3 +44,5 @@ export default function DefaultLayout() {
     </div>
   )
 }
+
+export default DefaultLayout;

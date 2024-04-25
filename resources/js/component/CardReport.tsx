@@ -1,7 +1,7 @@
 import React from 'react'
 import { reportList } from '../utils/report-list'
 
-export default function CardReport({ id, title, desc }: reportList) {
+const CardReport = ({ id, title, desc }: reportList) => {
   return (
     <div className=' px-1 pt-1 pb-2 mb-5 lg:mb-8 mr-0 xs:mr-4'>
       {id % 2 === 1 && (
@@ -21,3 +21,5 @@ export default function CardReport({ id, title, desc }: reportList) {
     </div>
   )
 }
+
+export default CardReport;

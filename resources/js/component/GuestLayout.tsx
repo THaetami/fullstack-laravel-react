@@ -3,7 +3,7 @@ import { useStateContext } from '../contexts/ContextProvider'
 import React from 'react';
 
 
-export default function GuestLayout() {
+const GuestLayout = () => {
   const { token, notification } = useStateContext();
 
   if (token) {
@@ -23,3 +23,5 @@ export default function GuestLayout() {
     </>
   )
 }
+
+export default GuestLayout;

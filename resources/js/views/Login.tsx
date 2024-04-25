@@ -8,11 +8,10 @@ import { BiSolidKey } from "react-icons/bi";
 import { IoIosMail } from "react-icons/io";
 import FormInput from "../component/FormInput";
 
-// import guestStyle from  '../styles/views/form-sign-signup.module.scss';
 import guestStyle from '../../sass/view/form-sign-signup.module.scss';
+import Cookies from "js-cookie";
 
-
-export default function Login() {
+const Login  = () => {
   const [formValid, setFormValid] = useState(false)
   const [errors, setErrors] = useState<FormErrors | null>(null);
 
@@ -46,6 +45,7 @@ export default function Login() {
 
     axiosInstance.post('/auth', form)
       .then(({ data }) => {
+        Cookies.set("jwt", data.data.token, { expires: 10080 });
         setToken(data.data.token);
         setUser(data.data.user);
         setNotification(`Selamat datang ${data.data.user.name}`, 'info')
@@ -108,3 +108,6 @@ export default function Login() {
     </>
   )
 }
+
+
+export default Login;

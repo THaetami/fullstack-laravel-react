@@ -4,8 +4,7 @@ import CardReport from "./CardReport";
 import { reportList } from '../utils/report-list';
 import TableReport from './TableReport';
 
-// import '../styles/components/tabs.scss';
-// import '../../sass/component/tabs.scss';
+import '../../sass/component/tabs.scss';
 
 
 interface TabsProps {
@@ -16,7 +15,7 @@ interface TabsProps {
 }
 
 
-export default function Tabs({ tabs, currentTab, setCurrentTab, page}: TabsProps) {
+const Tabs = ({ tabs, currentTab, setCurrentTab, page}: TabsProps) => {
   const categories = [...new Set(tabs.map(item => item.category))];
 
   const handleTabClick = (e: React.FormEvent) => {
@@ -50,3 +49,5 @@ export default function Tabs({ tabs, currentTab, setCurrentTab, page}: TabsProps
     </div>
   );
 }
+
+export default Tabs;

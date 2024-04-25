@@ -1,5 +1,5 @@
-// typings.d.ts
-declare module '*.scss' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
+// // typings.d.ts
+// declare module '*.scss' {
+//   const classes: { [key: string]: string };
+//   export default classes;
+// }

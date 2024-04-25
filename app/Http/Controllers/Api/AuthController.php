@@ -33,8 +33,8 @@ class AuthController extends Controller
             return JsonResponseHelper::respondFail('Provided email address or password is incorrect', 422);
         }
 
-        return JsonResponseHelper::respondSuccess($authData)
-            ->cookie('token', $authData['token'], 60, null, null, false, true);
+        return JsonResponseHelper::respondSuccess($authData);
+        // ->cookie('token', $authData['token'], 60, null, null, false, true);
     }
 
 

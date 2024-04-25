@@ -7,10 +7,9 @@ import { getData } from "../utils/purchases-table-list";
 import HeaderPage from "../component/HeaderPage";
 import { Helmet } from "react-helmet-async";
 
-// import '../styles/views/layout-page.scss';
-// import '../../sass/view/layout-page.scss';
+import '../../sass/view/layout-page.scss';
 
-export default function Purchases() {
+const Purchases = () => {
   const [currentTab, setCurrentTab] = useState('Faktur');
   const tabs = getData();
 
@@ -63,3 +62,5 @@ export default function Purchases() {
     </>
   )
 }
+
+export default Purchases;

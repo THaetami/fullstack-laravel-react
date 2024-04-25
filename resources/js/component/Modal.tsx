@@ -3,10 +3,9 @@ import { useStateContext } from '../contexts/ContextProvider'
 import axiosInstance from '../utils/api-default'
 import CropImage from './CropImage';
 
-// import '../styles/components/modal.scss';
-// import '../../sass/component/modal.scss';
+import '../../sass/component/modal.scss';
 
-export default function Modal() {
+const Modal = () => {
   const { openModal, setOpenModal, setToken, setUser } = useStateContext()
 
   const onLogout = (e: React.MouseEvent) => {
@@ -61,3 +60,5 @@ export default function Modal() {
     </>
   )
 }
+
+export default Modal;

@@ -14,7 +14,7 @@ const TheadComp = () => {
   )
 }
 
-export default function Table() {
+const Table = () => {
   const data = ['Kas', 'Rekening Bank', 'Giro'];
   return (
     <div className="overflow-x-auto bg-white max-h-[300px]">
@@ -42,3 +42,5 @@ export default function Table() {
     </div>
   )
 }
+
+export default Table;
